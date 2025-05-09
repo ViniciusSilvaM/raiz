@@ -1,0 +1,5 @@
+git --version 
+git clone https://github.com/ViniciusSilvaM/raiz.git
+git add .
+git commit -m "primeiro"
+git push
