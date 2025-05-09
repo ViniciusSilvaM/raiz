@@ -1,12 +1,6 @@
 #include <stdio.h>
 
-int soma;
-
-int sub;
-
-int multi;
-
-int div;
+int soma, sub, multi, div;
 
 void somar(){
     int n1, n2;
@@ -49,14 +43,36 @@ void dividir(){
     scanf("%i", &n1);
     printf("Digite o segundo numero: ");
     scanf("%i", &n2);
-    div = n1 / n2;
-    printf("Resultado da subtracao: %i\n", div);
+
+    if (n2 == 0) {
+        printf("Erro, divisao por zero!");
+    }
+    else {
+        div = n1 / n2;
+        printf("Resultado da subtracao: %i\n", div);
+    }  
     printf("\n");
 }
 
 int main() {
-    somar();
-    subtrair();
-    multiplicar();
-    dividir();
+    int opcao;
+    do{
+        printf("\n=== CALCULADORA ===\n");
+        printf(" 1 - Somar\n");
+        printf(" 2 - Subtrair\n");
+        printf(" 3 - Multiplicar\n");
+        printf(" 4 - Dividir\n");
+        printf("Escolha uma opcao: ");
+        scanf("%i", &opcao);
+
+        switch (opcao) {
+            case 1: somar(); break;
+            case 2: subtrair(); break;
+            case 3: multiplicar(); break;
+            case 4: dividir(); break;
+            default: printf("Opcao invalida! Escolha uma opcao valida: \n");
+        }        
+    } while(opcao != 0);
+
+    return 0;
 }
